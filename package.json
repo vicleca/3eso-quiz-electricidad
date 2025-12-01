@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "cap:add:android": "npx cap add android",
+    "cap:copy": "npx cap sync android",
+    "cap:open:android": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/cli": "^7.4.4",
+    "@capacitor/core": "^7.4.4"
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">3º ESO - Electricidad y Electrónica</string>
+    <string name="title_activity_main">3º ESO - Electricidad y Electrónica</string>
+    <string name="package_name">com.sierralion.eso3electricidad</string>
+    <string name="custom_url_scheme">com.sierralion.eso3electricidad</string>
+</resources>
