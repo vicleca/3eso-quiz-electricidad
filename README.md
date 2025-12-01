@@ -3,8 +3,8 @@
 Esta aplicación web permite realizar un cuestionario interactivo sobre Electricidad y Electrónica para alumnos de 3º ESO. Incluye funcionalidades avanzadas como ampliación de imágenes, cambio de tema claro/oscuro, y exportación de resultados.
 
 ## Características principales
-- **Configuración dinámica**: Carga CURSO, MATERIA, TEMA, PASSWORD y TÍTULO desde `www/config.js`.
-- **Carga de preguntas**: Lee el CSV desde `www/assets/preguntas.csv` (separador `;`, multivalor `,`).
+- **Configuración dinámica**: Carga CURSO, MATERIA, TEMA, PASSWORD y TÍTULO desde `docs/config.js`.
+- **Carga de preguntas**: Lee el CSV desde `docs/assets/preguntas.csv` (separador `;`, multivalor `,`).
 - **Interfaz interactiva**: Orden aleatorio de preguntas, feedback inmediato, barra de progreso, botones “Saltar” y “Siguiente”.
 - **Evaluación detallada**: Notas globales y por etiqueta (saberes básicos, competencias específicas, criterios de evaluación, descriptores del perfil de salida).
 - **Ampliación de imágenes**: Haz clic en cualquier imagen de pregunta para verla ampliada en un modal con scroll si es necesario.
@@ -13,22 +13,22 @@ Esta aplicación web permite realizar un cuestionario interactivo sobre Electric
 - **Accesibilidad**: Diseño responsive, favicon, y optimizado para móvil.
 
 ## Estructura del proyecto
-- `www/` → Raíz servida (Live Server y Capacitor).
-- `www/config.js` → Configuración de la app (título, curso, contraseña, etc.).
-- `www/index.html` → Página principal con estructura HTML.
-- `www/styles.css` → Estilos CSS con soporte para temas claro/oscuro.
-- `www/main.js` → Punto de entrada principal.
-- `www/ui.js` → Gestión de UI y eventos.
-- `www/quiz.js` → Lógica del cuestionario y carga de CSV.
-- `www/state.js` → Gestión del estado de la aplicación.
-- `www/assets/` → Archivos estáticos (preguntas.csv, imágenes).
-- `www/vendor/` → Librerías externas (PapaParse para CSV).
-- `www/favicon.ico` → Icono del sitio.
+- `docs/` → Raíz servida (Live Server y Capacitor).
+- `docs/config.js` → Configuración de la app (título, curso, contraseña, etc.).
+- `docs/index.html` → Página principal con estructura HTML.
+- `docs/styles.css` → Estilos CSS con soporte para temas claro/oscuro.
+- `docs/main.js` → Punto de entrada principal.
+- `docs/ui.js` → Gestión de UI y eventos.
+- `docs/quiz.js` → Lógica del cuestionario y carga de CSV.
+- `docs/state.js` → Gestión del estado de la aplicación.
+- `docs/assets/` → Archivos estáticos (preguntas.csv, imágenes).
+- `docs/vendor/` → Librerías externas (PapaParse para CSV).
+- `docs/favicon.ico` → Icono del sitio.
 
 ## Uso local (VS Code + Live Server)
 1. Abre la carpeta del proyecto en VS Code.
-2. Haz clic derecho en `www/index.html` → "Open with Live Server".
-3. La aplicación se abrirá en tu navegador. La contraseña está definida en `www/config.js` (por defecto: 1234).
+2. Haz clic derecho en `docs/index.html` → "Open with Live Server".
+3. La aplicación se abrirá en tu navegador. La contraseña está definida en `docs/config.js` (por defecto: 1234).
 
 ## Generación de APK con Capacitor
 
@@ -64,10 +64,10 @@ Estos pasos instalan todas las herramientas necesarias en tu ordenador.
 Sigue estos pasos cada vez que hagas un cambio en la app (en el código o en las preguntas) y quieras generar un nuevo `.apk`.
 
 1.  **Realizar cambios:**
-    * Modifica el contenido de la carpeta `www/` (por ejemplo, actualiza `www/assets/preguntas.csv`, cambia el `config.js` o ajusta el CSS).
+    * Modifica el contenido de la carpeta `docs/` (por ejemplo, actualiza `docs/assets/preguntas.csv`, cambia el `config.js` o ajusta el CSS).
 
 2.  **Sincronizar los cambios:**
-    * En la terminal, ejecuta este comando. Copiará todos tus archivos de la carpeta `www/` al proyecto `android`.
+    * En la terminal, ejecuta este comando. Copiará todos tus archivos de la carpeta `docs/` al proyecto `android`.
         ```bash
         npm run cap:copy
         ```
@@ -88,7 +88,7 @@ Sigue estos pasos cada vez que hagas un cambio en la app (en el código o en las
 - El `<title>` del `index.html` se establece desde `config.js` (campo `titulo`). Si no está definido, usa `curso · tema`.
 - El campo "Nombre del alumno" no se autocompleta para privacidad.
 - "Saltar pregunta" (botón naranja) avanza automáticamente. "Siguiente/Finalizar" (botón azul) se habilita tras responder.
-- Las imágenes se cargan desde `www/assets/` y pueden ampliarse haciendo clic.
+- Las imágenes se cargan desde `docs/assets/` y pueden ampliarse haciendo clic.
 - El tema se guarda en localStorage y se aplica automáticamente.
-- Añadir `www/assets/preguntas.csv` con la cabecera:
+- Añadir `docs/assets/preguntas.csv` con la cabecera:
 pregunta;respuesta1;respuesta2;respuesta3;respuesta4;indice_correcta;competencias_especificas;criterios;saberes;descriptores;imagen;feedback_explicacion
